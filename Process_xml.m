@@ -9,10 +9,10 @@ Bag=[];
 for i=1:length(FileNames)
 %     xmlDoc = xmlread('VOC2007/Annotations/000005.xml');
     xmlDoc=xmlread(strcat('VOC2007/Annotations/',FileNames{i}));
-    %获取filename
+    %禄帽脠隆filename
     file_name = xmlDoc.getElementsByTagName('filename');
     name = string(file_name.item(0).getTextContent());
-    %获取xmin
+    %禄帽脠隆xmin
     x_min=xmlDoc.getElementsByTagName('xmin');
     instance_num=x_min.getLength;
     X_min=[];
