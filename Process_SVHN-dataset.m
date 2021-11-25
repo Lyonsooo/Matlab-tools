@@ -9,7 +9,7 @@ for i = 1:length(digitStruct)
     SVHN_data(i).name=digitStruct(i).name;
     %save name
     for j = 1:length(digitStruct(i).bbox)
-        [height, width] = size(im);
+        [height, width, ~] = size(im);
         x_min = max(digitStruct(i).bbox(j).top+1,1);
         x_max = min(digitStruct(i).bbox(j).top+digitStruct(i).bbox(j).height, height);
         y_min = max(digitStruct(i).bbox(j).left+1,1);
