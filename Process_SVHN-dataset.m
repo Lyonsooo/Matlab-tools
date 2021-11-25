@@ -1,9 +1,9 @@
 %dataset URL http://ufldl.stanford.edu/housenumbers/
-%SVHN dataset 中读取bbox->取出图像->抽取HOG特征
+%SVHN dataset 涓鍙朾box->鍙栧嚭鍥惧儚->鎶藉彇HOG鐗瑰緛
 % SVHN_data -> name (string)
 %           -> feature(struct)->[label, HOG_features,LBP_feature]
-% load digitStruct.mat
-%加载bbox
+load digitStruct.mat
+%鍔犺浇bbox
 for i = 1:length(digitStruct)
     im = imread([digitStruct(i).name]);
     SVHN_data(i).name=digitStruct(i).name;
@@ -16,7 +16,7 @@ for i = 1:length(digitStruct)
         y_max = min(digitStruct(i).bbox(j).left+digitStruct(i).bbox(j).width, width);
         
         tmp_image=im(x_min:x_max, y_min:y_max, :);
-        %取出instance
+        %鍙栧嚭instance
         SVHN_data(i).feature(j).label=digitStruct(i).bbox(j).label;
         %save label
         
